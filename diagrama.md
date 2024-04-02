@@ -1,0 +1,13 @@
+graph TD;
+A[Usuario] --> B[Interactúa con la página de notas];
+B --> C[Introduce contenido de la nueva nota];
+C --> D[Hace clic en el botón "Guardar"];
+D --> E{Valida la entrada};
+E -->|Válido| F[Envía solicitud POST];
+E -->|Inválido| G[Muestra mensaje de error];
+F --> H[Servidor procesa la solicitud];
+H --> I[Guarda la nueva nota en la base de datos];
+I --> J[Responde con éxito];
+J --> K[Actualiza la lista de notas en la interfaz];
+K --> L[Muestra confirmación al usuario];
+G --> L;
